@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Network.Cli", "Network.Cli\Network.Cli.csproj", "{360E2511-5B47-4F54-98D0-4B8A3AE2E407}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Network", "Network\Network.csproj", "{9172E482-4E55-422B-9685-51396A990336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Status", "Status\Status.csproj", "{61B410A9-F77A-4C18-BE31-A2EAF1CA6932}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{360E2511-5B47-4F54-98D0-4B8A3AE2E407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360E2511-5B47-4F54-98D0-4B8A3AE2E407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360E2511-5B47-4F54-98D0-4B8A3AE2E407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360E2511-5B47-4F54-98D0-4B8A3AE2E407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9172E482-4E55-422B-9685-51396A990336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9172E482-4E55-422B-9685-51396A990336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9172E482-4E55-422B-9685-51396A990336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9172E482-4E55-422B-9685-51396A990336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B410A9-F77A-4C18-BE31-A2EAF1CA6932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B410A9-F77A-4C18-BE31-A2EAF1CA6932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B410A9-F77A-4C18-BE31-A2EAF1CA6932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B410A9-F77A-4C18-BE31-A2EAF1CA6932}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C199E6D-A1CA-4392-BEF5-BE2868A2AF26}
+	EndGlobalSection
+EndGlobal
