@@ -4,11 +4,11 @@ namespace Status
 {
     public class State : IEquatable<State>
     {
-        public Element Key { get; }
+        public StateElement Key { get; }
 
         public string Value { get; set; }
 
-        public State(Element key, string value)
+        public State(StateElement key, string value)
         {
             this.Key = key;
             this.Value = value;

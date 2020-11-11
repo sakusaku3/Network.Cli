@@ -5,37 +5,37 @@ using System.Linq;
 
 namespace Status
 {
-    public class Element : IEquatable<Element>
+	/// <summary>
+	/// 状態の1要素クラス
+	/// </summary>
+    public class StateElement : IEquatable<StateElement>
     {
         public string Name { get; }
 
-        public ObservableCollection<string> Items { get; } = 
-            new ObservableCollection<string>();
+		public IReadOnlyList<string> Items { get; }
 
-        public Element() : this(string.Empty) { } 
+        public StateElement() : this(string.Empty) { } 
 
-        public Element(string name) : 
-            this(name, Enumerable.Empty<string>()) { }
+        public StateElement(string name) : 
+            this(name, Enumerable.Empty<string>().ToArray()) { }
 
-        public Element(
+        public StateElement(
             string name,
-            IEnumerable<string> items)
+            IReadOnlyList<string> items)
         {
             this.Name = name;
-            foreach (var item in items)
-                this.Items.Add(item);
+			this.Items = items;
         }
 
-        public Element(Element other)
+        public StateElement(StateElement other)
         {
             this.Name = other.Name;
-            foreach (var item in other.Items)
-                this.Items.Add(item);
+			this.Items = other.Items.ToArray();
         }
 
         #region IEquatable implements
 
-        public bool Equals(Element other)
+        public bool Equals(StateElement other)
         {
             if (other is null) return false;
             if (object.ReferenceEquals(this, other)) return true;
@@ -45,7 +45,7 @@ namespace Status
 
         public override bool Equals(object obj)
         {
-            return this.Equals(obj as Element);
+            return this.Equals(obj as StateElement);
         }
 
         public override int GetHashCode()
@@ -60,22 +60,22 @@ namespace Status
             return $"{this.Name}:[{string.Join(",", this.Items)}]";
         }
 
-        public static bool operator ==(Element x, Element y)
+        public static bool operator ==(StateElement x, StateElement y)
         {
             if (x is null) return false;
             return x.Equals(y);
         }
 
-        public static bool operator !=(Element x, Element y)
+        public static bool operator !=(StateElement x, StateElement y)
         {
             return !(x == y);
         }
 
         #endregion
 
-        public Element Clone()
+        public StateElement Clone()
         {
-            return new Element(this);
+            return new StateElement(this);
         }
     }
 }

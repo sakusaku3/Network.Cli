@@ -26,11 +26,11 @@ namespace Network.Cli
         private static readonly string delemiter = ","; 
         private static readonly Encoding encoding = Encoding.UTF8; 
 
-        private static IReadOnlyList<Status.Element> GetElements(string filepath)
+        private static IReadOnlyList<Status.StateElement> GetElements(string filepath)
         {
             return XsvConverter.EnumerateLines(filepath, encoding, delemiter)
                 .Skip(1)
-                .Select(x => new Status.Element(x[0], x[1].Replace("[", "").Replace("]", "").Split(",")))
+                .Select(x => new Status.StateElement(x[0], x[1].Replace("[", "").Replace("]", "").Split(",")))
                 .ToArray();
         }
 
@@ -43,7 +43,7 @@ namespace Network.Cli
         }
 
         private static string[] GetStatusSetColumn(
-			IReadOnlyList<Status.Element> elements,
+			IReadOnlyList<Status.StateElement> elements,
 			IReadOnlyList<Status.StateChangeEvent> events) 
         {
             return elements.Select(x => x.Name)

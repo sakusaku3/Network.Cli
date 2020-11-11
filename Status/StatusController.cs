@@ -7,11 +7,9 @@ namespace Status
 {
     public class StatusController
     {
-        public ObservableCollection<Element> Elements { get; } = 
-            new ObservableCollection<Element>();
+        public IReadOnlyList<StateElement> Elements { get; }
 
-        public ObservableCollection<StateChangeEvent> Events { get; } = 
-            new ObservableCollection<StateChangeEvent>();
+        public IReadOnlyList<StateChangeEvent> Events { get; }
 
         public ObservableCollection<StatusSet> StatusSets { get; } = 
             new ObservableCollection<StatusSet>();
@@ -19,15 +17,11 @@ namespace Status
 		public StatusController() { }
 
 		public StatusController(
-			IReadOnlyList<Element> elements,
+			IReadOnlyList<StateElement> elements,
 			IReadOnlyList<StateChangeEvent> events) 
 		{
-			foreach (var e in elements)
-				this.Elements.Add(e);
-
-			foreach (var e in events)
-				this.Events.Add(e);
-
+			this.Elements = elements;
+			this.Events = events;
 			this.SetStatus();
 		}
 
@@ -39,7 +33,7 @@ namespace Status
         }
 
         private IEnumerable<StatusBuilder> recursiveGetBuilders(
-			IReadOnlyList<Element> elements)
+			IReadOnlyList<StateElement> elements)
         {
             var rest = elements.Skip(1).ToArray();
 
